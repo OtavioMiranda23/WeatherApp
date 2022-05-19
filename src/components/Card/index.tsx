@@ -1,5 +1,6 @@
 import { Background, Line, MinMax, Cards, City, Temp, Icon, MinIcon, MaxIcon, } from "./styles";
 import   WaveDown  from '../../assets/wave.svg'
+import { motion } from 'framer-motion'
 
 export function Card(){
     return (
@@ -10,21 +11,25 @@ export function Card(){
                     </Line>
                     <Line>
                         <Temp>
-                            <div> 20° </div> 
-                            <Icon/>
+                            <motion.span animate={{scale: 2}}>
+                                     20°
+                            </motion.span> 
+                            <motion.div animate={{scale: 2, y: -18}}>
+                                <Icon />
+                            </motion.div>
                         </Temp>
                 <img src={WaveDown} alt='background'/>
                     </Line>
                     <Line>
                     <MinMax>
-                        <div>
+                        <motion.div animate={{y: 5}}>
                             <MinIcon/> 
                             <span>12°</span>
-                        </div>
-                        <div>
+                        </motion.div>
+                        <motion.div animate={{y: -5}}>
                             <MaxIcon/>
                             <span>20°</span>
-                        </div>
+                        </motion.div>
                     </MinMax>
                     </Line>
             </Cards>

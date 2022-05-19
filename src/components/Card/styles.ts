@@ -15,8 +15,9 @@ export const Cards = styled.div`
     width: 35vh;
     margin: 0 auto;
     display: block;
-    background-image: linear-gradient(rgb(236, 240, 241, 0) , rgb(236, 240, 241, 1));
-    //background-color: rgb(255, 85, 0, 0.2);
+    background-image: 
+        linear-gradient(rgb(236, 240, 241, 0) , rgb(236, 240, 241, 1));
+
     img { 
         justify-content: center;
         display: flex;
@@ -40,7 +41,7 @@ export const City = styled.div`
 
 export const Temp = styled.div`
     //border: 1px solid magenta;
-    font-size: 4rem;
+    font-size: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -50,8 +51,8 @@ export const Temp = styled.div`
 
 const iconSunCSS = css`
     //border: 1px solid magenta;
-    width: 5rem;
-    height: 5rem;
+    width: 2.5rem;
+    height: 2.5rem;
     color: var(--orange);  
     `
 const iconMinMaxCSS = css`
