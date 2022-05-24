@@ -37,6 +37,7 @@ export const City = styled.div`
     justify-content: center;
     text-align: center;
     color: var(--text-title) ;
+    
     `
 
 export const Temp = styled.div`
