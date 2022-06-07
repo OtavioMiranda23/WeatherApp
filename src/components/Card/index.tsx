@@ -1,23 +1,16 @@
 import { Background, Line, MinMax, Cards, City, Temp, Icon, MinIcon, MaxIcon, } from "./styles";
 import   WaveDown  from '../../assets/wave.svg'
 import { motion } from 'framer-motion'
-import { useEffect, useState } from "react";
-import { api } from "../../services/api";
 
-type informationsProps = {
-    temperature: number,
-    min: number,
-    max: number
+interface informationsProps {
+    temperature: number | null,
+    min: number | null;
+    max: number | null
+
   }
 
-export function Card(){
-    const [informations, setInformations] = useState<informationsProps>()
+export function Card(props: informationsProps){
 
-    useEffect(()=> {
-      api.get('informations')
-      .then(response => setInformations(response.data[0]))
-    },[]);
-    console.log('A temperatura é:' + (informations))
 
 
     return (
@@ -29,7 +22,7 @@ export function Card(){
                     <Line>
                         <Temp>
                             <motion.span animate={{scale: 2}}>
-                                {informations?.temperature}
+                                {props.temperature}
                             </motion.span> 
                             <motion.div animate={{scale: 2, y: -18}}>
                                 <Icon />
@@ -41,11 +34,11 @@ export function Card(){
                     <MinMax>
                         <motion.div animate={{y: 10}}>
                             <MinIcon/> 
-                            <span>{informations?.min}</span>
+                            <span>{props.min}</span>
                         </motion.div>
                         <motion.div animate={{y: -5}}>
                             <MaxIcon/>
-                            <span>{informations?.max}</span>
+                            <span>{props.max}</span>
                         </motion.div>
                     </MinMax>
                     </Line>
